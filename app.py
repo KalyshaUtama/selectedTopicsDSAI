@@ -3,10 +3,10 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load precomputed document embeddings
-embeddings = np.load(r"C:\Users\97455\Desktop\embeddings.npy")
+embeddings = np.load("embeddings.npy")
 
 # Load documents
-with open(r"C:\Users\97455\Desktop\documents.txt", "r", encoding="utf-8") as f:
+with open("documents.txt", "r", encoding="utf-8") as f:
     documents = [line.strip() for line in f.readlines()]  # Strip newlines
 
 def retrieve_top_k(query_embedding, embeddings, k=10):

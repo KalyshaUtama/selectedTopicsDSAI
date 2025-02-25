@@ -22,7 +22,7 @@ def mistral(user_message, model="mistral-small-latest", is_json=False):
 
 
 # Streamlit UI
-st.title("Information Retrieval using Document Embeddings")
+st.title("I am Mistral :))")
 
 # Input query
 query = st.text_input("Enter your query:")

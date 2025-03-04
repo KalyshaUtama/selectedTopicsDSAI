@@ -29,4 +29,4 @@ query = st.text_input("Enter your query:")
 
 response = mistral(query)
 
-st.write("Response", response)
+st.write("Response\n", response)

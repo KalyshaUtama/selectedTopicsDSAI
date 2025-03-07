@@ -24,6 +24,12 @@ def mistral(user_message, model="mistral-small-latest", is_json=False):
 # Streamlit UI
 st.title("I am Mistral :))")
 
+option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"),
+)
+
+st.write("You selected:", option)
 # Input query
 query = st.text_input("Enter your query:")
 

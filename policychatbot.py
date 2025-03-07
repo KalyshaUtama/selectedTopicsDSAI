@@ -80,7 +80,7 @@ Context information is below.
 {retrieved_chunk}
 ---------------------
 Given the context information and not prior knowledge, answer the query.
-Query: {question}
+Query: {query}
 Answer:
 """
 

@@ -45,7 +45,7 @@ option = st.selectbox(
 "Academic Qualifications Policy -V2	PL-AC-03",
 "Credit Hour Policy-V1	PL-AC-26",
 "Intellectual Property Policy -V1",
-"Joint Appointment Policy - V1)"
+"Joint Appointment Policy - V1")
 )
 
 st.write("You selected:", option)

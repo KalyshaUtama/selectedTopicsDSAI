@@ -1,5 +1,5 @@
 streamlit
 numpy
 mistralai
-bs4
-faiss
+beautifulsoup4
+faiss-cpu

@@ -1,3 +1,4 @@
 streamlit
 numpy
 mistralai
+bs4

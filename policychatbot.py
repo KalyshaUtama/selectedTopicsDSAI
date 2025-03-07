@@ -6,6 +6,7 @@ import re
 import faiss
 import os
 from mistralai import Mistral
+import numpy as np
 
 os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")
@@ -52,7 +53,7 @@ option = st.selectbox(
 "Joint Appointment Policy - V1")
 )
 
-st.write(f"You selected:https://www.udst.edu.qa/about-udst/institutional-excellence-ie/policies-and-procedures/{option}")
+st.write(f"You selected:{option}")
 add_document(f"https://www.udst.edu.qa/about-udst/institutional-excellence-ie/policies-and-procedures/{option}")
 
 query = st.text_input("Enter your query:")

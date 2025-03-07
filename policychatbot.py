@@ -52,7 +52,7 @@ option = st.selectbox(
 "Joint Appointment Policy - V1")
 )
 
-st.write("You selected:", option)
+st.write(f"You selected:https://www.udst.edu.qa/about-udst/institutional-excellence-ie/policies-and-procedures/{option}")
 add_document(f"https://www.udst.edu.qa/about-udst/institutional-excellence-ie/policies-and-procedures/{option}")
 
 query = st.text_input("Enter your query:")

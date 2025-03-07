@@ -12,7 +12,7 @@ os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")
 api_key = os.getenv("MISTRAL_API_KEY")
 
-
+''''
 def add_document(doc):
   response = requests.get(
   doc
@@ -29,7 +29,7 @@ def add_document(doc):
   d = len(text_embeddings[0].embedding)
   index = faiss.IndexFlatL2(d)
   index.add(embeddings)
-
+'''
 def get_text_embedding(list_txt_chunks):
   client = Mistral(api_key=api_key)
   embeddings_batch_response = client.embeddings.create(model="mistral-embed",
@@ -55,6 +55,20 @@ option = st.selectbox(
 
 st.write(f"You selected:{option}")
 add_document(f"https://www.udst.edu.qa/about-udst/institutional-excellence-ie/policies-and-procedures/{option}")
+response = requests.get(
+doc
+)
+html_doc = response.text
+soup = BeautifulSoup(html_doc, "html.parser")
+tag = soup.find("div")
+text = tag.text
+chunk_size = 512
+chunks = [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
+text_embeddings = get_text_embedding(chunks)
+embeddings = np.array([text_embeddings[i].embedding for i in range(len(text_embeddings))])
+d = len(text_embeddings[0].embedding)
+index = faiss.IndexFlatL2(d)
+index.add(embeddings)
 
 query = st.text_input("Enter your query:")
 question_embeddings = np.array([get_text_embedding([query])[0].embedding])

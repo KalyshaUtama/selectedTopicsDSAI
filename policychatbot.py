@@ -12,24 +12,6 @@ os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")
 api_key = os.getenv("MISTRAL_API_KEY")
 
-'''
-def add_document(doc):
-  response = requests.get(
-  doc
-  )
-  html_doc = response.text
-  soup = BeautifulSoup(html_doc, "html.parser")
-  tag = soup.find("div")
-  text = tag.text
-  print(text)
-  chunk_size = 512
-  chunks = [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
-  text_embeddings = get_text_embedding(chunks)
-  embeddings = np.array([text_embeddings[i].embedding for i in range(len(text_embeddings))])
-  d = len(text_embeddings[0].embedding)
-  index = faiss.IndexFlatL2(d)
-  index.add(embeddings)
-'''
 def get_text_embedding(list_txt_chunks):
   client = Mistral(api_key=api_key)
   embeddings_batch_response = client.embeddings.create(model="mistral-embed",
@@ -97,7 +79,7 @@ def mistral(user_message, model="mistral-small-latest", is_json=False):
   return chat_response.choices[0].message.content
 
 response = mistral(prompt)
-print(response)
+st.write(response)
 
 
           

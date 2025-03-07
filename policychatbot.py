@@ -4,6 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import faiss
+import os
+from mistralai import Mistral
 
 os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")

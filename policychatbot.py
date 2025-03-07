@@ -8,7 +8,7 @@ import os
 from mistralai import Mistral
 import numpy as np
 
-os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
+os.environ["MISTRAL_API_KEY"] = "kE42n9iR9HZXzTUUIIzKAi9UK9xTBDs3"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")
 api_key = os.getenv("MISTRAL_API_KEY")
 
@@ -18,21 +18,21 @@ def get_text_embedding(list_txt_chunks):
   inputs=list_txt_chunks)
   return embeddings_batch_response.data
 
-st.title("UDST policy chatbot")
+st.title("UDST academic policy chatbot")
 
 option = st.selectbox(
     "Which policy would you like to inquire about?",
     (
 "academic-annual-leave-policy",
 "academic-appraisal-policy",
-"Academic Credentials Policy - V1 	PL-AC-02",
-"Academic Freedom Policy- V1 ",
-"Academic Members' Retention Policy- V1 	PL-AC-12",
-"Academic Professional Development Policy-V1",
-"Academic Qualifications Policy -V2	PL-AC-03",
-"Credit Hour Policy-V1	PL-AC-26",
-"Intellectual Property Policy -V1",
-"Joint Appointment Policy - V1")
+"academic-appraisal-procedure",
+"academic-credentials-policy",
+"academic-freedom-policy",
+"academic-members’-retention-policy",
+"academic-professional-development",
+"academic-qualifications-policy",
+"credit-hour-policy",
+"ntellectual-property-policy")
 )
 
 st.write(f"You selected:{option}")

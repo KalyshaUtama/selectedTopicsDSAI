@@ -54,9 +54,8 @@ option = st.selectbox(
 )
 
 st.write(f"You selected:{option}")
-add_document(f"https://www.udst.edu.qa/about-udst/institutional-excellence-ie/policies-and-procedures/{option}")
 response = requests.get(
-doc
+f"https://www.udst.edu.qa/about-udst/institutional-excellence-ie/policies-and-procedures/{option}"
 )
 html_doc = response.text
 soup = BeautifulSoup(html_doc, "html.parser")

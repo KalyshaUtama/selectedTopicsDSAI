@@ -22,7 +22,7 @@ def add_document(doc):
   text = tag.text
   print(text)
   chunk_size = 512
-  chunks = [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)
+  chunks = [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
   client = Mistral(api_key=api_key)
   text_embeddings = client.embeddings.create(model="mistral-embed",
   inputs=list_txt_chunks).data

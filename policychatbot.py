@@ -12,7 +12,7 @@ api_key = os.getenv("MISTRAL_API_KEY")
 
 def add_document(doc):
   response = requests.get(
-  "https://www.udst.edu.qa/about-udst/institutional-excellence-ie/policies-and-procedures/sport-and-we
+  doc
   )
   html_doc = response.text
   soup = BeautifulSoup(html_doc, "html.parser")

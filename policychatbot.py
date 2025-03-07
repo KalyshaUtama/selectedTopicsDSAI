@@ -80,7 +80,6 @@ def mistral(user_message, model="mistral-small-latest", is_json=False):
   model=model,
   messages=messages,
   )
-  )
   return chat_response.choices[0].message.content
 
 response = mistral(prompt)

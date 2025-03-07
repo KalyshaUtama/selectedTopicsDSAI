@@ -12,7 +12,7 @@ os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")
 api_key = os.getenv("MISTRAL_API_KEY")
 
-''''
+'''
 def add_document(doc):
   response = requests.get(
   doc

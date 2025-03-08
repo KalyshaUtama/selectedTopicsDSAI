@@ -8,7 +8,7 @@ import os
 from mistralai import Mistral
 import numpy as np
 
-os.environ["MISTRAL_API_KEY"] = "kE42n9iR9HZXzTUUIIzKAi9UK9xTBDs3"
+os.environ["MISTRAL_API_KEY"] = "qRpmF7ozxjcGwWrO0DjxocqjVTnLhwyq"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")
 api_key = os.getenv("MISTRAL_API_KEY")
 

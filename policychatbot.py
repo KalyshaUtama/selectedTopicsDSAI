@@ -110,7 +110,6 @@ if query:
         model=model,
         messages=messages,
         )
-        )
         return chat_response.choices[0].message.content
 
     # ✅ Get response and display it

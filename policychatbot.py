@@ -11,6 +11,7 @@ from mistralai import UserMessage
 # Correct import
 
 # ✅ Secure API Key Handling
+os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
 api_key = os.getenv("MISTRAL_API_KEY")
 if not api_key:
     st.error("MISTRAL_API_KEY is missing. Set it as an environment variable.")

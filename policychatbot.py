@@ -16,7 +16,7 @@ if not api_key:
     st.error("MISTRAL_API_KEY is missing. Set it as an environment variable.")
     st.stop()
 
-client = Mistral(api_key=api_key
+client = Mistral(api_key=api_key)
 
 st.title("UDST Academic Policy Chatbot")
 

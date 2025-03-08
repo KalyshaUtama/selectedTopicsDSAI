@@ -6,7 +6,8 @@ import faiss
 import numpy as np
 import time
 from mistralai.client import MistralClient
-from mistralai.models import ChatMessage
+from mistralai.models.chat_completion import ChatMessage
+
 # Correct import
 
 # ✅ Secure API Key Handling

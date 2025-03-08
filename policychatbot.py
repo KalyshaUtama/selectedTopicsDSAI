@@ -5,8 +5,7 @@ from bs4 import BeautifulSoup
 import faiss
 import numpy as np
 import time
-from mistralai.client import MistralClient
-from mistralai import UserMessage
+from mistralai import Mistral,UserMessage
 
 # Correct import
 
@@ -17,7 +16,7 @@ if not api_key:
     st.error("MISTRAL_API_KEY is missing. Set it as an environment variable.")
     st.stop()
 
-client = MistralClient(api_key=api_key)
+client = Mistral(api_key=api_key
 
 st.title("UDST Academic Policy Chatbot")
 

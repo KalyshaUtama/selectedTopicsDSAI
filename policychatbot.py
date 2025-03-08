@@ -6,6 +6,8 @@ import re
 import faiss
 import os
 from mistralai import Mistral
+from mistralai.client import MistralClient
+from mistralai.models.chat_completion import ChatMessage
 import numpy as np
 
 os.environ["MISTRAL_API_KEY"] = "b1HKlTtc2a1pqPEgMcqm8sVqckYAdfMj"
@@ -13,7 +15,7 @@ print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")
 api_key = os.getenv("MISTRAL_API_KEY")
 @st.cache_data(ttl=86400)  
 def get_text_embedding(list_txt_chunks):
-  client = Mistral(api_key=api_key)
+  client = MistralClient(api_key=api_key)
   embeddings_batch_response = client.embeddings.create(model="mistral-embed",
   inputs=list_txt_chunks)
   return embeddings_batch_response.data
@@ -32,7 +34,7 @@ option = st.selectbox(
 "academic-professional-development",
 "academic-qualifications-policy",
 "credit-hour-policy",
-"ntellectual-property-policy")
+"intellectual-property-policy")
 )
 
 st.write(f"You selected:{option}")
@@ -68,16 +70,10 @@ if query:
   """
   
   def mistral(user_message, model="mistral-small-latest", is_json=False):
-    model = "mistral-large-latest"
-    client = Mistral(api_key=api_key)
-    messages = [
-    UserMessage(content=user_message),
-    ]
-    chat_response = client.chat.complete(
-    model=model,
-    messages=messages,
-    )
-    return chat_response.choices[0].message.content
+    """Query Mistral AI with a structured conversation format."""
+    messages = [ChatMessage(role="user", content=user_message)]
+    response = client.chat(model=model, messages=messages)
+    return response.choices[0].message.content
   
   response = mistral(prompt)
   st.write(response)

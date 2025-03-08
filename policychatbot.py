@@ -101,6 +101,7 @@ if query:
     """
 
     def mistral(user_message, model="mistral-small-latest", is_json=False):
+        time.sleep(2) 
         model = "mistral-large-latest"
         client = Mistral(api_key=api_key)
         messages = [

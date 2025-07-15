@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import os
 from mistralai import Mistral, UserMessage
-import SpeechRecognition  as sr
+import SpeechRecognition as sr
 
 os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")

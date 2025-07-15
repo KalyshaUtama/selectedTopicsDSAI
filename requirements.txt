@@ -4,3 +4,4 @@ mistralai
 beautifulsoup4
 faiss-cpu
 requests
+SpeechRecognition 

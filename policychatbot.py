@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import os
 from mistralai import Mistral, UserMessage
+import SpeechRecognition  as sr
 
 os.environ["MISTRAL_API_KEY"] = "HVu1lheglNRREvb4XO5Yvm7GrcsufpLj"
 print(f"MISTRAL_API_KEY: {os.environ.get('MISTRAL_API_KEY')}")
@@ -31,6 +32,15 @@ company_knowledge = {
         {"title": "Rulebook", "content": "All students are required to..."}
     ]
 }
+
+recognizer = sr.Recognizer()
+mic = sr.Microphone()
+
+with mic as source:
+    st.write("🎙️ Listening... Speak now!")
+    audio = recognizer.listen(source)
+    user_input = recognizer.recognize_google(audio)
+    st.write("You said:", user_input)
 
 # Simulate company selection (later will be based on login or subdomain)
 company_id = st.selectbox("Choose company", options=["company_1", "company_2"])
